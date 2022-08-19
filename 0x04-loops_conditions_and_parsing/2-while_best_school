@@ -1,5 +1,7 @@
 #!/usr/bin/environment bash
 #prints "Best school" 10 times using the while loop
+let i=0
+
 while ((i != 10))
 do
         echo "Best school"
