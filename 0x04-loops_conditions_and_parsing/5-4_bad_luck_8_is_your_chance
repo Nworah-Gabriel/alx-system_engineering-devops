@@ -4,20 +4,23 @@
 #displays good luck for the 8th loop iteration
 #displays Best School for the other iterations
 
-let k=1
+#!/usr/bin/env bash
+# Loops from 1 to 10 and displays:
+#   "bad luck" for the 4th iteration
+#   "good luck" for the 8th iteration
+#   "Best School" for all other iterations
 
-while ((k < 11))
+count=0
+
+while [ $count -lt 10 ]
 do
-        if (( k == 4 ))
-        then
-                echo "bad luck"
-                (( k++))
-        elif (( k == 8 ))
-        then
-                echo "good luck"
-                (( k++ ))
-        else
-                echo "Best school"
-                (( k++ ))
-        fi
+  if [ $count -eq 3 ]
+  then
+    echo "bad luck"
+  elif [ $count -eq 7 ]
+  then
+    echo "good luck"
+  else
+    echo "Best School"
+  fi
 done
