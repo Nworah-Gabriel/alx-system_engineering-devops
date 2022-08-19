@@ -2,10 +2,11 @@
 #print "Best school" 10 times
 #and also prints "Hi" at the ninth iteration
 
-let i=0
+i=0
 while ((i != 10))
 do
-        echo "Best school"                        ((i++))
+        echo "Best school"
+	((i++))
         if (( i == 9))
         then
                 echo "Hi"
