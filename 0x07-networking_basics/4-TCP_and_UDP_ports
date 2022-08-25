@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#A bash script that lists the network statistics
+#shows only listening sovkets
+#shows the PID/name of the program to which each socket is connected to
+
+netstat -lp
