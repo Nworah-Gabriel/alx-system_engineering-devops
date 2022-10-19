@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#sudo mkdir -p /var/www/test.com/html
+#sudo chown -R $USER:$USER /var/www/test.com/html
+#sudo chmod -R 755 /var/www
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx.debian.html
+service nginx start
+
