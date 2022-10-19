@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#A script that install nginx web server
 sudo apt-get -y update
 sudo apt-get -y install nginx
 chmod -R 755 /var/www
