@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-#A script that install nginx web server
-sudo apt-get -y update
-sudo apt-get -y install nginx
-chmod -R 755 /var/www
+# installs nginx server on the web server
+
+apt-get -y update
+apt-get -y install nginx
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 service nginx start
