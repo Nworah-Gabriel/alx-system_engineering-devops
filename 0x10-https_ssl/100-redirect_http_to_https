@@ -7,7 +7,6 @@ global
         user haproxy
         group haproxy
         daemon
-
         # Default SSL material locations
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
@@ -36,12 +35,9 @@ defaults
 frontend http
         bind *:80
         mode http
-        bind *:443 ssl crt /etc/letsencrypt/live/www.swiftechdev.tech/fullchain.pem
-        default_backend web-backend
+	redirect scheme https code 301 unless { ssl_fc }
+        default_backend feranmi_backend
 
-backend web-backend
-        balance roundrobin
-        http-request redirect scheme https code 301 if !{ ssl_fc }
-        server 18106-web-01 35.174.61.107:80 check
-        server 18106-web-02 3.209.80.161:80 check
-
+frontend https
+        bind *:443 ssl crt /etc/haproxy/certs/www.feranmi.tech.pem
+        default_backend feranmi_backend
